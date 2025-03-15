@@ -2,11 +2,14 @@
 {
     class Sentence
     {
-        public string sentence;
+        public string sentence = null;
 
         public void Add(string word)
         {
-            sentence += " " + word;
+            if (sentence==null)
+                sentence += word;
+            else
+                sentence += ' ' + word;
         }
         public void Remove(string word)
         {
@@ -42,7 +45,8 @@
         }
         public string ShortestWord()
         {
-            return sentence.Split(' ').ToList().OrderBy(i => i.Length).First();
+            
+            return sentence.Split(' ').ToList().OrderBy(i => i.Length).First().ToString();
         }
         public bool IsContainWord(string word)
         {
