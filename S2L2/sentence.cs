@@ -2,8 +2,12 @@
 {
     class Sentence
     {
-        public string sentence = null;
+        public string sentence;
 
+        public Sentence()
+        {
+            sentence = null;
+        }
         public void Add(string word)
         {
             if (sentence==null)
